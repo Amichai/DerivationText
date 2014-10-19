@@ -1,0 +1,17 @@
+﻿<Window x:Class="EquationEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel Name="root">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Text="{Binding InputText}"></TextBox>
+            <Button Grid.Column="1"  Width="60" Click="Add_Click">Add</Button>
+        </Grid>
+
+    </StackPanel>
+</Window>
