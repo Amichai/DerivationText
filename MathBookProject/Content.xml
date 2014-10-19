@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Book>
+  <Lines>
+    <Line Value="testing2" Type="Input" />
+    <Line Value="testing" Type="Input" />
+  </Lines>
+</Book>
