@@ -61,6 +61,7 @@
     <Compile Include="TokenLibrary.cs" />
     <Compile Include="Tokens\BreakingChar.cs" />
     <Compile Include="Tokens\Function.cs" />
+    <Compile Include="Tokens\IArrange.cs" />
     <Compile Include="Tokens\IFunction.cs" />
     <Compile Include="Tokens\ImpliedMultiplication.cs" />
     <Compile Include="Tokens\ImpliedMultiplicationInfix.cs" />

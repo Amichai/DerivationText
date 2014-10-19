@@ -89,5 +89,5 @@ namespace MathBookProject {
         #endregion INotifyPropertyChanged Implementation
 
     }
-    public enum LineType { Input, Paragraph };
+    public enum LineType { Input, Paragraph, Equation };
 }

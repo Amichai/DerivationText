@@ -41,7 +41,7 @@ namespace MathBookProject.LineTypes {
         }
 
         private void Add_Click(object sender, RoutedEventArgs e) {
-            ContentLine toAdd = new ContentLine(LineType.Paragraph, this.TextVal);
+            ContentLine toAdd = new ContentLine(LineType.Equation, this.TextVal);
             Book.AllLines.Add(toAdd);
         }
 

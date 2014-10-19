@@ -4,10 +4,11 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace EquationEditor.Tokens {
     [DebuggerDisplay("{Value}")]
-    class Function : IToken, IFunction {
+    class Function : IToken, IFunction, IArrange {
         public Function(string val) {
             this.Value = val;
             this.Type = TokenType.function;
@@ -23,6 +24,10 @@ namespace EquationEditor.Tokens {
 
         public IToken Clone() {
             return new Function(Value) { NumberOfChildren = this.NumberOfChildren };
+        }
+
+        public FrameworkElement Arrange(List<Node> children) {
+            throw new NotImplementedException();
         }
     }
 }

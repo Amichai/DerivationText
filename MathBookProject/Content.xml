@@ -3,5 +3,7 @@
   <Lines>
     <Line Value="testing2" Type="Input" />
     <Line Value="testing" Type="Input" />
+    <Line Value="i \hbar (\partial / (\partial t)) \psi = \hat(H) \psi" Type="Equation" />
+    <Line Value="i \hbar ((\partial \psi) / (\partial t)) = \hbar^2 / 2 m" Type="Equation" />
   </Lines>
 </Book>

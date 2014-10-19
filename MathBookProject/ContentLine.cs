@@ -17,13 +17,17 @@ namespace MathBookProject {
             switch (type) {
                 case LineType.Input:
                     line = new InputLine(val);
-                    this.Control = line;
                     break;
                 case LineType.Paragraph:
                     line = new ParagraphLine(val);
-                    this.Control = line;
                     break;
+                case LineType.Equation:
+                    line = new EquationLine(val);
+                    break;
+                default:
+                    throw new Exception("Unknown line type");
             }
+            this.Control = line;
         }
 
         public string Val { get; private set; }

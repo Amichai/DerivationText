@@ -68,6 +68,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="LineTypes\EquationLine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LineTypes\InputLine.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -86,6 +90,9 @@
     </Compile>
     <Compile Include="Book.cs" />
     <Compile Include="ContentLine.cs" />
+    <Compile Include="LineTypes\EquationLine.xaml.cs">
+      <DependentUpon>EquationLine.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LineTypes\InputLine.xaml.cs">
       <DependentUpon>InputLine.xaml</DependentUpon>
     </Compile>
@@ -132,6 +139,10 @@
     <ProjectReference Include="..\..\CommonUtil\CommonUtil\CommonUtil.csproj">
       <Project>{778f153e-5b5e-43a0-a9ad-105b5004d345}</Project>
       <Name>CommonUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EquationEditor\EquationEditor.csproj">
+      <Project>{0b3488b5-c6f9-4fee-a40e-419ae2024f42}</Project>
+      <Name>EquationEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

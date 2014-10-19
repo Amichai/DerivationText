@@ -107,9 +107,12 @@ namespace EquationEditor {
                         }
                         break;
                     case TokenType.infixOperator:
-                        if (token.Value == "-" && lastToken != null && (breakingChars.Contains(lastToken.Value))) {
-                            //operatorStack.Push() ///push a single valued negation function
-                            postFixed.Add(new Function("Negate") { NumberOfChildren = 1 });
+                        if (token.Value == "-" &&
+                            ((lastToken != null && breakingChars.Contains(lastToken.Value)) || lastToken == null)
+                            ) {
+                            var negate = new Function("Negate") { NumberOfChildren = 1 };
+                            //operatorStack.Push(negate); ///push a single valued negation function
+                            postFixed.Add(negate);
                             break;
                         }
 

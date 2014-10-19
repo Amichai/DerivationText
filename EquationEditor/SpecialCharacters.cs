@@ -14,7 +14,6 @@ namespace EquationEditor {
             } else {
                 matched = true;
                 return mapping[s];
-                //return System.Text.RegularExpressions.Regex.Unescape();
             }
         }
         private static Dictionary<string, string> mapping = new Dictionary<string, string>() {

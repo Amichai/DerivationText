@@ -22,10 +22,14 @@ namespace EquationEditor {
     public partial class MainWindow : Window, INotifyPropertyChanged {
         public MainWindow() {
             InitializeComponent();
-            this.InputText = @"i \hbar \partial / (\partial t) \psi = \hat(H) \psi";
+            this.InputText = @"i \hbar (\partial / (\partial t)) \psi = \hat(H) \psi";
             //this.InputText = @"i \hbar \partial / t";
 
-            this.add(this.InputText);
+            //this.add(this.InputText);
+
+            //this.InputText = @"i \hbar ((\partial \psi) / (\partial t)) = - \hbar^2 / 2 m";
+            this.InputText = "-i";
+            this.add();
         }
 
         private string _InputText;
@@ -37,6 +41,10 @@ namespace EquationEditor {
             }
         }
 
+        private void add() {
+            var p = new Editor().Process(this.InputText);
+            this.root.Children.Add(p);
+        }
 
         private void add(string toProcess) {
             var p = new Editor().Process(toProcess);

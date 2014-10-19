@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace EquationEditor {
     class TokenLibrary {
@@ -28,7 +29,6 @@ namespace EquationEditor {
             { "Ellipse", new Function("Ellipse")},
             { "Negate", new Function("Negate")},
             { @"\hat", new Function("hat")},
-
 
         };
 
