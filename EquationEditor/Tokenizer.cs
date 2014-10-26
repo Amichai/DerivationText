@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EquationEditor {
     class Tokenizer {
-        private static List<string> breakingChars = new List<string> { " ", ",", ")", "(", "*", "/", "^", "+", "-", "=" };
+        private static List<string> breakingChars = new List<string> { " ", ",", ")", "(", "*", "/", "^", "+", "-", "=", "\\" };
 
         private List<string> splitString(string input, string c) {
             List<string> result = new List<string>();

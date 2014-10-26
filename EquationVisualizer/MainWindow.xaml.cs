@@ -15,41 +15,26 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace EquationEditor {
+namespace EquationVisualizer {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window, INotifyPropertyChanged {
         public MainWindow() {
             InitializeComponent();
-            this.InputText = @"i \hbar (\partial / (\partial t)) \psi = \hat(H) \psi";
-            //this.InputText = @"i \hbar \partial / t";
-
-            //this.add(this.InputText);
-
-            //this.InputText = @"i \hbar ((\partial \psi) / (\partial t)) = - \hbar^2 / 2 m";
-            this.InputText = @"\-i";
-            this.add();
+            this.Input = "\\frac{t}{3}";
+            this.update();
         }
 
-        private string _InputText;
-        public string InputText {
-            get { return _InputText; }
+        private string _Input;
+        public string Input {
+            get { return _Input; }
             set {
-                _InputText = value;
+                _Input = value;
                 NotifyPropertyChanged();
             }
         }
 
-        private void add() {
-            var p = new Editor().Process(this.InputText);
-            this.root.Children.Add(p);
-        }
-
-        private void add(string toProcess) {
-            var p = new Editor().Process(toProcess);
-            this.root.Children.Add(p);
-        }
         #region INotifyPropertyChanged Implementation
         public event PropertyChangedEventHandler PropertyChanged;
         protected void NotifyPropertyChanged([CallerMemberName] string propertyName = "") {
@@ -59,8 +44,14 @@ namespace EquationEditor {
         }
         #endregion INotifyPropertyChanged Implementation
 
-        private void Add_Click(object sender, RoutedEventArgs e) {
-            this.add(this.InputText);
+        private void Update_Click(object sender, RoutedEventArgs e) {
+            update();
+        }
+
+        private void update() {
+            Equation.Visualize(this.Input);
+
+            //this.root.Children.Add(Equation.Visualize(this.Input));
         }
     }
 }

@@ -4,3 +4,9 @@ packages/
 MathBookProject.v12.suo
 EquationEditor/obj/
 EquationEditor/bin/
+EquationVisualizer/bin/
+EquationVisualizer/obj/
+EquationVisualizerTest/bin/
+EquationVisualizerTest/obj/
+ParserGenerator/obj/
+ParserGenerator/bin/
