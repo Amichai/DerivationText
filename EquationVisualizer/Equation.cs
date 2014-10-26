@@ -38,6 +38,9 @@ namespace EquationVisualizer {
                 case "Equation":
                     return new EquationElement(node);
                 case "ExpressionList":
+                    if (node.ChildNodes.Count() == 1) {
+                        return node.ChildNodes.Single().ToVisualElement();
+                    }
                     return new ExpressionList(node);
                 case "Op":
                 case "Expression":
@@ -49,19 +52,28 @@ namespace EquationVisualizer {
                         case "frac":
                             toReturn = new FracElement();
                             break;
+                        case "sup":
+                            toReturn = new SupElement();
+                            break;
+                        case "sub":
+                            toReturn = new SubElement();
+                            break;
                         default:
                             toReturn = new IdentifierElement(node);
                             break;
                     }
-                    
-                    waitingForArguments.Push(toReturn);
+                    if (toReturn.ChildCount > 0) {
+                        waitingForArguments.Push(toReturn);
+                    }
                     return toReturn;
                 case "ArgumentList":
                     waitingForArguments.Pop().SetChildren(node);
                     return null;
                 case "ArgumentVal":
                 case "Argument":
-                    //return node.ChildNodes.Single().ToVisualElement();
+                    if (node.ChildNodes.Count() == 1) {
+                        return node.ChildNodes.Single().ToVisualElement();
+                    }
                     return new ExpressionList(node);
                 case "*":
                 case "-":

@@ -23,7 +23,7 @@ namespace EquationVisualizer {
         public MainWindow() {
             InitializeComponent();
             //this.Input = "\\frac{t}{3}";
-            this.Input = @"\frac{4 + 3}{4}";
+            this.Input = @"\frac{4 + 3}{4} \sup{3}3\sub{3}";
             this.update();
         }
 
