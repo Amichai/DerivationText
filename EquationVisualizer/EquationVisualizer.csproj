@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Irony">
+      <HintPath>..\Lib\Irony.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -53,13 +56,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Elements\ExpressionToken.cs" />
-    <Compile Include="Elements\Frac.cs" />
-    <Compile Include="Elements\TextElement.cs" />
-    <Compile Include="Elements\TokenElement.cs" />
     <Compile Include="InputStream.cs" />
+    <Compile Include="VisualElements\IdentifierElement.cs" />
+    <Compile Include="VisualElements\Expression.cs" />
+    <Compile Include="VisualElements\ExpressionList.cs" />
+    <Compile Include="VisualElements\EquationElement.cs" />
     <Compile Include="VisualElements\FracElement.cs" />
-    <Compile Include="VisualElements\TextElement.cs" />
     <Compile Include="VisualElements\VisualElement.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -102,7 +104,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ParserGenerator\ParserGenerator.csproj">
+      <Project>{952ab17d-308a-42d7-83a7-e5ae3187e609}</Project>
+      <Name>ParserGenerator</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

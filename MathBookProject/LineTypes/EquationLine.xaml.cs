@@ -27,6 +27,8 @@ namespace MathBookProject.LineTypes {
         public EquationLine(string val)
             : this() {
                 this.Val = val;
+
+
                 this.root.Children.Add(new EquationEditor.Editor().Process(this.Val));
         }
     }

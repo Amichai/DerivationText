@@ -1,4 +1,5 @@
 ﻿using EquationVisualizer.VisualElements;
+using Irony.Parsing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +12,18 @@ namespace EquationVisualizer {
         public VisualElement(string val, int childCount) {
             this.Value = val;
             this.ChildCount = childCount;
+            this.Children = new List<VisualElement>();
         }
         public string Value { get; set; }
         public int ChildCount { get; set; }
         public List<VisualElement> Children { get; set; }
         public abstract FrameworkElement Render();
         public static VisualElement Frac = new FracElement();
-        public List<ElementTypes> Definition { get; set; }
+
+        public void SetChildren(ParseTreeNode node) {
+            foreach (var c in node.ChildNodes) {
+                this.Children.Add(c.ToVisualElement());
+            }
+        }
     }
 }

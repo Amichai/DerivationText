@@ -22,7 +22,8 @@ namespace EquationVisualizer {
     public partial class MainWindow : Window, INotifyPropertyChanged {
         public MainWindow() {
             InitializeComponent();
-            this.Input = "\\frac{t}{3}";
+            //this.Input = "\\frac{t}{3}";
+            this.Input = @"\frac{4 + 3}{4}";
             this.update();
         }
 
@@ -49,9 +50,11 @@ namespace EquationVisualizer {
         }
 
         private void update() {
-            Equation.Visualize(this.Input);
-
-            //this.root.Children.Add(Equation.Visualize(this.Input));
+            var toAdd = Equation.Visualize(this.Input);
+            if (toAdd == null) {
+                return;
+            }
+            this.root.Children.Add(toAdd);
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using EquationVisualizer.Elements;
-using EquationVisualizer.VisualElements;
+﻿using ParserGenerator;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,41 +7,73 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using Irony.Parsing;
+using EquationVisualizer.VisualElements;
 
 namespace EquationVisualizer {
     public class Equation {
-        public static void Visualize(string input) {
-            var e = new ExpressionToken();
-            var stream = new InputStream(input);
-            var taken = e.Consume(stream);
-            Debug.Print(e.Print());
-        }
-
-        public static ExpressionToken GetExpression(string input) {
-            var e = new ExpressionToken();
-            var stream = new InputStream(input);
-            var taken = e.Consume(stream);
-            Debug.Print("taken: " + taken.ToString());
-            return e;
-        }
-
-        private static FrameworkElement render(List<VisualElement> elements) {
-            StackPanel toReturn = new StackPanel();
-            toReturn.Orientation = Orientation.Horizontal;
-            foreach (var e in elements) {
-                toReturn.Children.Add(e.Render());
+        public static FrameworkElement Visualize(string input) {
+            var tree = EquationParser.Parse(input);
+            Debug.Print(tree.ToXml());
+            if (tree.ParserMessages.Count() > 0) {
+                var msg = string.Join(", ", tree.ParserMessages.Select(i => i.Message));
+                Debug.Print(msg);
+                return null;
             }
-            return toReturn;
+            return render(tree);
+
         }
 
-        internal static List<TokenElement> elements = new List<TokenElement>() { TokenElement.Frac };
-        private static Dictionary<string, TokenElement> elementsLib = new Dictionary<string, TokenElement>() {
-            { "\\frac", TokenElement.Frac }
-        };
-    }
-    public enum ElementTypes {
-        Expression, Frac
+        private static FrameworkElement render(ParseTree elements) {
+            var vis = elements.Root.ToVisualElement();
+            return vis.Render();
+        }
     }
 
-
+    static class Ext {
+        private static Stack<VisualElement> waitingForArguments = new Stack<VisualElement>();
+        public static VisualElement ToVisualElement(this ParseTreeNode node) {
+            string name = node.Term.Name;
+            switch (name) {
+                case "Equation":
+                    return new EquationElement(node);
+                case "ExpressionList":
+                    return new ExpressionList(node);
+                case "Op":
+                case "Expression":
+                    return node.ChildNodes.Single().ToVisualElement();
+                case "Identifier":
+                    VisualElement toReturn;
+                    string n2 = node.Token.Value.ToString();
+                    switch (n2) {
+                        case "frac":
+                            toReturn = new FracElement();
+                            break;
+                        default:
+                            toReturn = new IdentifierElement(node);
+                            break;
+                    }
+                    
+                    waitingForArguments.Push(toReturn);
+                    return toReturn;
+                case "ArgumentList":
+                    waitingForArguments.Pop().SetChildren(node);
+                    return null;
+                case "ArgumentVal":
+                case "Argument":
+                    //return node.ChildNodes.Single().ToVisualElement();
+                    return new ExpressionList(node);
+                case "*":
+                case "-":
+                case "/":
+                case "+":
+                case "Number":
+                    return new IdentifierElement(node);
+                default:
+                    Debug.Print(name);
+                    break;
+            }
+            throw new Exception();
+        }
+    }
 }

@@ -10,9 +10,6 @@ namespace EquationVisualizer.VisualElements {
     class FracElement : VisualElement {
         public FracElement()
             : base("", 2) {
-                this.Definition = new List<ElementTypes>() {
-                    ElementTypes.Expression, 
-                };
         }
         public override FrameworkElement Render() {
             if (this.Children.Count() != this.ChildCount) {
@@ -20,9 +17,13 @@ namespace EquationVisualizer.VisualElements {
             }
             StackPanel sp = new StackPanel() { HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center };
             sp.Orientation = Orientation.Vertical;
-            sp.Children.Add(this.Children[1].Render());
+            var a = this.Children[0].Render();
+            a.HorizontalAlignment = HorizontalAlignment.Center;
+            sp.Children.Add(a);
             sp.Children.Add(new Separator());
-            sp.Children.Add(this.Children[0].Render());
+            var b = this.Children[1].Render();
+            b.HorizontalAlignment = HorizontalAlignment.Center;
+            sp.Children.Add(b);
 
             return sp;
         }
