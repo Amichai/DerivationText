@@ -15,7 +15,7 @@ namespace EquationVisualizer.VisualElements {
 
         public override FrameworkElement Render() {
             if (this.Children.Count() != this.ChildCount) {
-                throw new Exception("Two children required for \frac{}{}");
+                throw new Exception("One child required");
             }
             StackPanel sp = new StackPanel() { HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center };
             sp.Orientation = Orientation.Vertical;

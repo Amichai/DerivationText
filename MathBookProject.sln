@@ -7,13 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathBookProject", "MathBook
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtil", "..\CommonUtil\CommonUtil\CommonUtil.csproj", "{778F153E-5B5E-43A0-A9AD-105B5004D345}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquationEditor", "EquationEditor\EquationEditor.csproj", "{0B3488B5-C6F9-4FEE-A40E-419AE2024F42}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquationVisualizer", "EquationVisualizer\EquationVisualizer.csproj", "{0FE6EEA0-3C57-43C1-B3FA-93F698130D8F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquationVisualizerTest", "EquationVisualizerTest\EquationVisualizerTest.csproj", "{CD7D24BB-BBBC-4E9A-8178-9773A40DF765}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParserGenerator", "ParserGenerator\ParserGenerator.csproj", "{952AB17D-308A-42D7-83A7-E5AE3187E609}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquationEditor", "EquationEditor\EquationEditor.csproj", "{0B3488B5-C6F9-4FEE-A40E-419AE2024F42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,6 @@ Global
 		{778F153E-5B5E-43A0-A9AD-105B5004D345}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{778F153E-5B5E-43A0-A9AD-105B5004D345}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{778F153E-5B5E-43A0-A9AD-105B5004D345}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0B3488B5-C6F9-4FEE-A40E-419AE2024F42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B3488B5-C6F9-4FEE-A40E-419AE2024F42}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B3488B5-C6F9-4FEE-A40E-419AE2024F42}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B3488B5-C6F9-4FEE-A40E-419AE2024F42}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0FE6EEA0-3C57-43C1-B3FA-93F698130D8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0FE6EEA0-3C57-43C1-B3FA-93F698130D8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FE6EEA0-3C57-43C1-B3FA-93F698130D8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{952AB17D-308A-42D7-83A7-E5AE3187E609}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{952AB17D-308A-42D7-83A7-E5AE3187E609}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{952AB17D-308A-42D7-83A7-E5AE3187E609}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B3488B5-C6F9-4FEE-A40E-419AE2024F42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B3488B5-C6F9-4FEE-A40E-419AE2024F42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B3488B5-C6F9-4FEE-A40E-419AE2024F42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B3488B5-C6F9-4FEE-A40E-419AE2024F42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

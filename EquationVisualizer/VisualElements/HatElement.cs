@@ -7,8 +7,8 @@ using System.Windows;
 using System.Windows.Controls;
 
 namespace EquationVisualizer.VisualElements {
-    class SupElement : VisualElement {
-        public SupElement()
+    class HatElement : VisualElement {
+        public HatElement()
             : base("", 1) {
 
         }
@@ -18,14 +18,15 @@ namespace EquationVisualizer.VisualElements {
                 throw new Exception("One child required");
             }
             StackPanel sp = new StackPanel() { HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center };
+            sp.Margin = new Thickness(0, -6, 0, 0);
             sp.Orientation = Orientation.Vertical;
-            var a = this.Children[0].Render();
-            if (a is TextBlock) {
-                (a as TextBlock).FontSize -= 3;
-            }
-            a.HorizontalAlignment = HorizontalAlignment.Center;
-            a.Margin = new Thickness(0, 0, 0, 8);
-            sp.Children.Add(a);
+
+            var t = this.getTextBlock("^");
+            t.Margin = new Thickness(0, 0, 0, -10);
+            sp.Children.Add(t);
+            sp.Children.Add(this.Children[0].Render());
+
+
             return sp;
         }
     }

@@ -63,6 +63,7 @@
     <Compile Include="VisualElements\EquationElement.cs" />
     <Compile Include="VisualElements\FracElement.cs" />
     <Compile Include="VisualElements\SubElement.cs" />
+    <Compile Include="VisualElements\HatElement.cs" />
     <Compile Include="VisualElements\SupElement.cs" />
     <Compile Include="VisualElements\VisualElement.cs" />
     <Page Include="MainWindow.xaml">

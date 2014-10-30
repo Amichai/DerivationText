@@ -20,7 +20,6 @@ namespace EquationEditor {
             {@"\hbar",  @"ℏ" },
             {@"\partial", "∂"},
             {@"\psi", "Ψ"},
-
         };
     }
 }

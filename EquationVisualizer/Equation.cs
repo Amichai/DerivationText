@@ -37,12 +37,14 @@ namespace EquationVisualizer {
             switch (name) {
                 case "Equation":
                     return new EquationElement(node);
+                case "IdentifierList":
                 case "ExpressionList":
                     if (node.ChildNodes.Count() == 1) {
                         return node.ChildNodes.Single().ToVisualElement();
                     }
                     return new ExpressionList(node);
                 case "Op":
+                case "InclusiveIdentifier":
                 case "Expression":
                     return node.ChildNodes.Single().ToVisualElement();
                 case "Identifier":
@@ -57,6 +59,9 @@ namespace EquationVisualizer {
                             break;
                         case "sub":
                             toReturn = new SubElement();
+                            break;
+                        case "hat":
+                            toReturn = new HatElement();
                             break;
                         default:
                             toReturn = new IdentifierElement(node);
@@ -75,10 +80,15 @@ namespace EquationVisualizer {
                         return node.ChildNodes.Single().ToVisualElement();
                     }
                     return new ExpressionList(node);
+                case "SpecialChar":
+                    return node.ChildNodes.Single().ToVisualElement();
                 case "*":
                 case "-":
                 case "/":
                 case "+":
+                case "=":
+                case "**":
+
                 case "Number":
                     return new IdentifierElement(node);
                 default:

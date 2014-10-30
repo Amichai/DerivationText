@@ -10,9 +10,12 @@ using System.Windows.Controls;
 namespace EquationVisualizer.VisualElements {
     class IdentifierElement : VisualElement {
         public IdentifierElement(ParseTreeNode node)
-            : base(node.Token.Value.ToString(), -1) {
-            foreach (var c in node.ChildNodes) {
-                this.Children.Add(c.ToVisualElement());
+            : base("", -1) {
+            var v = node.Token.Value.ToString();
+            if (mapping.ContainsKey(v)) {
+                this.Value = mapping[v];
+            } else {
+                this.Value = v;
             }
         }
 
@@ -23,5 +26,10 @@ namespace EquationVisualizer.VisualElements {
             tb.Text = this.Value;
             return tb;
         }
+        private static Dictionary<string, string> mapping = new Dictionary<string, string>() {
+            {@"hbar",  @"ℏ" },
+            {@"partial", "∂"},
+            {@"psi", "Ψ"},
+        };
     }
 }

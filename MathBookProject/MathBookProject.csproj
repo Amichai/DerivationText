@@ -140,9 +140,9 @@
       <Project>{778f153e-5b5e-43a0-a9ad-105b5004d345}</Project>
       <Name>CommonUtil</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EquationEditor\EquationEditor.csproj">
-      <Project>{0b3488b5-c6f9-4fee-a40e-419ae2024f42}</Project>
-      <Name>EquationEditor</Name>
+    <ProjectReference Include="..\EquationVisualizer\EquationVisualizer.csproj">
+      <Project>{0fe6eea0-3c57-43c1-b3fa-93f698130d8f}</Project>
+      <Name>EquationVisualizer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
