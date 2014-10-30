@@ -41,7 +41,7 @@ namespace MathBookProject {
             var lines = this.Book.Lines.Select(i => i.Control).ToObservableCollection();
             if (linesControl == null) {
                 linesControl = new StackPanel() {
-                    VerticalAlignment = System.Windows.VerticalAlignment.Stretch
+                    VerticalAlignment = System.Windows.VerticalAlignment.Stretch,
                 };
             }
             foreach (var l in lines) {
