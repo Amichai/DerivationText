@@ -63,6 +63,9 @@ namespace EquationVisualizer {
                         case "hat":
                             toReturn = new HatElement();
                             break;
+                        case "s":
+                            toReturn = new SymbolElement();
+                            break;
                         default:
                             toReturn = new IdentifierElement(node);
                             break;

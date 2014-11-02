@@ -12,14 +12,18 @@ namespace EquationVisualizer {
     abstract class VisualElement {
         public VisualElement(string val, int childCount) {
             this.Value = val;
+            this.UnadjustedValue = val;
             this.ChildCount = childCount;
             this.Children = new List<VisualElement>();
         }
         public string Value { get; set; }
+        public string UnadjustedValue { get; set; }
         public int ChildCount { get; set; }
         public List<VisualElement> Children { get; set; }
         public abstract FrameworkElement Render();
-        //public static VisualElement Frac = new FracElement();
+
+        public SymbolData SymbolData = null;
+
 
         public void SetChildren(ParseTreeNode node) {
             foreach (var c in node.ChildNodes) {

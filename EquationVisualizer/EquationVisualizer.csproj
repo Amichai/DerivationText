@@ -56,7 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Decorator.cs" />
     <Compile Include="InputStream.cs" />
+    <Compile Include="Symbols\SymbolData.cs" />
     <Compile Include="VisualElements\IdentifierElement.cs" />
     <Compile Include="VisualElements\Expression.cs" />
     <Compile Include="VisualElements\ExpressionList.cs" />
@@ -65,6 +67,7 @@
     <Compile Include="VisualElements\SubElement.cs" />
     <Compile Include="VisualElements\HatElement.cs" />
     <Compile Include="VisualElements\SupElement.cs" />
+    <Compile Include="VisualElements\SymbolElement.cs" />
     <Compile Include="VisualElements\VisualElement.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -10,8 +10,8 @@ using System.Windows.Controls;
 namespace EquationVisualizer.VisualElements {
     class IdentifierElement : VisualElement {
         public IdentifierElement(ParseTreeNode node)
-            : base("", -1) {
-            var key = node.Token.Value.ToString();
+            : base(node.Token.Value.ToString(), -1) {
+            var key = this.Value;
             string val;
             if (mapping.TryGetValue(key, out val)) {
                 this.Value = val;
