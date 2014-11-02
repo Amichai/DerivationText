@@ -100,7 +100,6 @@ namespace DerivationViewer {
             this.visualizationGrid.Children.Clear();
             this.visualizationGrid.Children.Add(Equation.Visualize(c.Content));
             this.CurrentDescription = c.Description;
-
         }
 
         private void Back_Click(object sender, RoutedEventArgs e) {

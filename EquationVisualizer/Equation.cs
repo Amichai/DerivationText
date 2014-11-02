@@ -14,7 +14,7 @@ namespace EquationVisualizer {
     public class Equation {
         public static FrameworkElement Visualize(string input) {
             var tree = EquationParser.Parse(input);
-            Debug.Print(tree.ToXml());
+            //Debug.Print(tree.ToXml());
             if (tree.ParserMessages.Count() > 0) {
                 var msg = string.Join(", ", tree.ParserMessages.Select(i => i.Message));
                 Debug.Print(msg);
@@ -63,7 +63,7 @@ namespace EquationVisualizer {
                         case "hat":
                             toReturn = new HatElement();
                             break;
-                        case "s":
+                        case "_":
                             toReturn = new SymbolElement();
                             break;
                         default:

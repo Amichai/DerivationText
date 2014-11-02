@@ -26,12 +26,12 @@ namespace EquationVisualizer {
             SymbolData.Create("hbar", 
             "Reduced Planck Constant", 
             "The Planck constant (denoted h, also called Planck's constant) is a physical constant that is the quantum of action in quantum mechanics. Published in 1900, it originally described the proportionality constant between the energy, E, of a charged atomic oscillator in the wall of a black body, and the frequency, ν, of its associated electromagnetic wave. Its relevance is now integral to the field of quantum mechanics, describing the relationship between energy and frequency, known as the Planck–Einstein relation:",
-            @"ℏ"),
+            "ℏ"),
 
             SymbolData.Create("partial", 
             "Partial", 
             "Partial",
-            @"∂"),
+            "∂"),
 
             SymbolData.Create("psi", 
             "Psi", 

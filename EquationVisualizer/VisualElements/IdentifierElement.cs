@@ -12,7 +12,7 @@ namespace EquationVisualizer.VisualElements {
         public IdentifierElement(ParseTreeNode node)
             : base(node.Token.Value.ToString(), -1) {
             var key = this.Value;
-            var match =  SymbolData.Symbols.Where(i => i.Identifier == key).SingleOrDefault();
+            var match = SymbolData.Symbols.Where(i => i.Identifier == key).SingleOrDefault();
             if (match != null) {
                 this.Value = match.SymbolVal;
             }
