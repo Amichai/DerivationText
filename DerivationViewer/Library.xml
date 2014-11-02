@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+<Library>
+  <Derivations>
+    <Derivation>
+      <Frame Content="i \hbar \frac{\partial}{\partial t} \psi = \hat{H} \psi" Description="testing"></Frame>
+      <Frame Content="\frac{a}{a + b}" Description="testing1"></Frame>
+      <Frame Content="\frac{a}{a + b + \frac{a}{a + b}}" Description="testing2"></Frame>
+      <Frame Content="\frac{a}{a + b + \frac{a}{a + b + \frac{a}{a + b + \frac{a}{a + b}}}}" Description="testing3"></Frame>
+    </Derivation>
+  </Derivations>
+  <Equations>
+
+  </Equations>
+</Library>

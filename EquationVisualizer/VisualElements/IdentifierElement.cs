@@ -11,11 +11,12 @@ namespace EquationVisualizer.VisualElements {
     class IdentifierElement : VisualElement {
         public IdentifierElement(ParseTreeNode node)
             : base("", -1) {
-            var v = node.Token.Value.ToString();
-            if (mapping.ContainsKey(v)) {
-                this.Value = mapping[v];
+            var key = node.Token.Value.ToString();
+            string val;
+            if (mapping.TryGetValue(key, out val)) {
+                this.Value = val;
             } else {
-                this.Value = v;
+                this.Value = key;
             }
         }
 

@@ -26,7 +26,8 @@ namespace EquationVisualizer {
             //this.Input = "\\frac{t}{3}";
             //this.Input = @"\frac{4 + 3}{4} \sup{3}3\sub{3}";
             //this.Input = @"i \hbar \partial / \partial t \psi  \hat{H} \psi";
-            this.Input = @"i \hbar \frac{\partial}{\partial t} \psi = \hat{H} \psi";
+            //this.Input = @"i \hbar \frac{\partial}{\partial t} \psi = \hat{H} \psi";
+            this.Input = @"\frac{a}{a + b}";
             Debug.Print(this.Input);
             this.update();
         }

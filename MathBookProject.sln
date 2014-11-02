@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParserGenerator", "ParserGe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquationEditor", "EquationEditor\EquationEditor.csproj", "{0B3488B5-C6F9-4FEE-A40E-419AE2024F42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DerivationViewer", "DerivationViewer\DerivationViewer.csproj", "{108A4120-FC31-4186-A961-7BF4086FCDB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{0B3488B5-C6F9-4FEE-A40E-419AE2024F42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B3488B5-C6F9-4FEE-A40E-419AE2024F42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B3488B5-C6F9-4FEE-A40E-419AE2024F42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{108A4120-FC31-4186-A961-7BF4086FCDB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{108A4120-FC31-4186-A961-7BF4086FCDB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{108A4120-FC31-4186-A961-7BF4086FCDB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{108A4120-FC31-4186-A961-7BF4086FCDB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
