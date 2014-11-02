@@ -1,6 +1,7 @@
 ﻿using EquationVisualizer;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
@@ -26,11 +27,24 @@ namespace DerivationViewer {
         public MainWindow() {
             InitializeComponent();
             this.parse();
+            this.Symbols = new ObservableCollection<SymbolData>();
+            foreach (var s in SymbolData.Symbols) {
+                this.Symbols.Add(s);
+            }
             EquationDecorator.ClickEvent.Subscribe(i => {
                 var symbol = i.Tag as string;
                 Debug.Print(symbol);
             });
             this.render(0);
+        }
+
+        private ObservableCollection<SymbolData> _Symbols;
+        public ObservableCollection<SymbolData> Symbols {
+            get { return _Symbols; }
+            set {
+                _Symbols = value;
+                NotifyPropertyChanged();
+            }
         }
 
         string path = @"..\..\Library.xml";

@@ -12,11 +12,9 @@ namespace EquationVisualizer.VisualElements {
         public IdentifierElement(ParseTreeNode node)
             : base(node.Token.Value.ToString(), -1) {
             var key = this.Value;
-            string val;
-            if (mapping.TryGetValue(key, out val)) {
-                this.Value = val;
-            } else {
-                this.Value = key;
+            var match =  SymbolData.Symbols.Where(i => i.Identifier == key).SingleOrDefault();
+            if (match != null) {
+                this.Value = match.SymbolVal;
             }
         }
 
@@ -27,10 +25,5 @@ namespace EquationVisualizer.VisualElements {
             tb.Text = this.Value;
             return tb;
         }
-        private static Dictionary<string, string> mapping = new Dictionary<string, string>() {
-            {@"hbar",  @"ℏ" },
-            {@"partial", "∂"},
-            {@"psi", "Ψ"},
-        };
     }
 }

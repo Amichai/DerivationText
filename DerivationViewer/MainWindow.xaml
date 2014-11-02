@@ -34,7 +34,13 @@
                 </av:LayoutDocumentPane>
                 <av:LayoutDocumentPane>
                     <av:LayoutDocument CanClose="False" Title="Symbol Library">
-
+                        <ItemsControl ItemsSource="{Binding Symbols}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock FontWeight="Bold" Text="{Binding Name}"></TextBlock>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
                     </av:LayoutDocument>
                 </av:LayoutDocumentPane>
                 <av:LayoutDocumentPane>
