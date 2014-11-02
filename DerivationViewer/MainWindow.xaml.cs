@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -25,8 +26,13 @@ namespace DerivationViewer {
         public MainWindow() {
             InitializeComponent();
             this.parse();
+            EquationDecorator.ClickEvent.Subscribe(i => {
+                var symbol = i.Tag as string;
+                Debug.Print(symbol);
+            });
             this.render(0);
         }
+
         string path = @"..\..\Library.xml";
         private Derivation derviation;
         private int frameIdx = 0;
@@ -80,6 +86,7 @@ namespace DerivationViewer {
             this.visualizationGrid.Children.Clear();
             this.visualizationGrid.Children.Add(Equation.Visualize(c.Content));
             this.CurrentDescription = c.Description;
+
         }
 
         private void Back_Click(object sender, RoutedEventArgs e) {

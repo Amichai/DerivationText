@@ -20,7 +20,7 @@ namespace EquationVisualizer.VisualElements {
             var symbolData = Symbols.Single(i => i.Identifier == s);
             c.SymbolData = symbolData;
             var rendered = c.Render();
-            rendered = Decorator.Decorate(rendered, symbolData);
+            rendered = EquationDecorator.Decorate(rendered, symbolData);
             return rendered;
         }
 

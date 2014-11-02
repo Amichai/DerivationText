@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace EquationVisualizer {
-    class SymbolData {
+    public class SymbolData {
         public string Identifier { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
