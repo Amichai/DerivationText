@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace DerivationViewer {
-    class Derivation {
+    public class Derivation {
         public List<Frame> frames = new List<Frame>();
 
         public static Derivation Parse(XElement xml) {

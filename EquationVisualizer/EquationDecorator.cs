@@ -25,7 +25,7 @@ namespace EquationVisualizer {
             g.PreviewMouseDown += (s, e) => {
                 ClickEvent.OnNext(s as FrameworkElement);
             };
-            g.Tag = symbolData.Identifier;
+            g.Tag = symbolData;
             return g;
         }
     }

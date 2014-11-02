@@ -9,21 +9,9 @@
             <av:LayoutPanel>
                 <av:LayoutDocumentPane>
                     <av:LayoutDocument Title="Visualization" CanClose="False">
-                        <Grid Background="White">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition />
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="1" Name="visualizationGrid" HorizontalAlignment="Center">
-
-                            </Grid>
-                            <TextBlock Grid.Row="2" Text="{Binding CurrentDescription}" HorizontalAlignment="Center"></TextBlock>
-                            <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center">
-                                <Button Content="&lt;" Width="60" Click="Back_Click"></Button>
-                                <Button Content=">" Width="60" Click="Forward_Click"></Button>
-                            </StackPanel>
+                        <Grid>
+                            <Frame Name="navRoot" NavigationUIVisibility="Visible">
+                            </Frame>
                         </Grid>
                     </av:LayoutDocument>
                 </av:LayoutDocumentPane>
